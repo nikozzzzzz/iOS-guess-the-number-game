@@ -11,6 +11,8 @@ import UIKit
 class ViewController: UIViewController {
     //create the secret number variable and set to 0
     var secretNumberVar : Int = 0
+    
+    @IBOutlet weak var comparisonOutputResult: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -24,6 +26,9 @@ class ViewController: UIViewController {
 
     @IBAction func generateButtonTouch(_ sender: UIButton) {
         secretNumberVar = Int(arc4random_uniform(10))
+        let secretNumberVarString = String(secretNumberVar)
+        comparisonOutputResult.text = secretNumberVarString
+        
     }
 }
 
